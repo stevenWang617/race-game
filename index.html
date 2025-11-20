@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8-Bit Racer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="layout">
+    <section class="header">
+      <h1>8-Bit Racer</h1>
+      <p>Use ← / → or A / D to switch lanes. Collect coins and boosts, avoid obstacles!</p>
+    </section>
+
+    <section class="content">
+      <canvas id="game" width="400" height="600" aria-label="racing game" role="img"></canvas>
+
+      <aside class="info">
+        <div class="panel">
+          <h2>Stats</h2>
+          <div class="stat-row"><span>Score:</span><span id="score">0</span></div>
+          <div class="stat-row"><span>Coins:</span><span id="coins">0</span></div>
+          <div class="stat-row"><span>Speed:</span><span id="speed">0</span></div>
+          <button id="start">Start / Restart</button>
+        </div>
+
+        <div class="panel">
+          <h2>Leaderboard</h2>
+          <ol id="leaderboard"></ol>
+        </div>
+
+        <div class="panel">
+          <h2>How to play</h2>
+          <ul>
+            <li>Dodge red obstacles.</li>
+            <li>Grab yellow coins to earn extra points.</li>
+            <li>Hit cyan accelerators to move faster briefly.</li>
+            <li>Game ends when you crash. Restart to try again!</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
