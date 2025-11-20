@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --bg: #111;
+  --lane: #1f1f1f;
+  --text: #f5f5f5;
+  --accent: #25c2a0;
+  --panel: #1a1a1a;
+  --border: #2d2d2d;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1b1b1b, #0b0b0b 60%);
+  color: var(--text);
+}
+
+.layout {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.header p {
+  margin: 0;
+  color: #cfcfcf;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+  align-items: start;
+}
+
+canvas#game {
+  width: 100%;
+  border: 8px solid var(--border);
+  background: #0a0a0a;
+  image-rendering: pixelated;
+  box-shadow: var(--shadow);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 2px solid var(--border);
+  padding: 12px;
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  margin: 0 0 12px;
+  letter-spacing: 1px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+button#start {
+  width: 100%;
+  padding: 10px;
+  background: var(--accent);
+  color: #0b0b0b;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+button#start:hover {
+  filter: brightness(1.1);
+}
+
+ol#leaderboard {
+  margin: 0;
+  padding-left: 20px;
+  color: #e6e6e6;
+}
+
+.panel ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #cfcfcf;
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .info {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .panel {
+    flex: 1 1 260px;
+  }
+}
